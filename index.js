@@ -4,7 +4,7 @@ var Base = require('mocha/lib/reporters/base'),
     EventEmitter = require('events').EventEmitter,
     format = require('util').format;
 
-var runnerEvents = [ 'start', 'pass', 'pending', 'fail', 'end', 'hook', 'hook end', 'suite', 'suite end', 'test', 'test end' ];
+var runnerEvents = [ 'start', 'pass', 'pending', 'fail', 'end', 'hook', 'hook end', 'suite', 'suite end', 'test', 'test end', 'test group' ];
 var _process = process;
 
 var PassThrough = require('stream').PassThrough;
