@@ -22,12 +22,11 @@ module.exports = function (reporters) {
             
             runnerEvents.forEach(function (event) {
                 runner.on(event, function () {
-                    var _stdout = console._stdout;
-                    console._stdout = stream;
+                    var _console_stdout = console._stdout,
+                        _process_stdout = process.stdout;
                     
-                    var proxy = { stdout: stream };
-                    proxy.__proto__ = _process;
-                    global.process = proxy;
+                    Object.defineProperty(global.console, '_stdout', { value: stream });
+                    Object.defineProperty(global.process, 'stdout', { value: stream });
                     
                     var i = arguments.length, args = new Array(i+1);
                     while (i--) { args[i+1] = arguments[i]; }
@@ -35,8 +34,8 @@ module.exports = function (reporters) {
                     
                     ee.emit.apply(ee, args);
                     
-                    global.process = _process;
-                    console._stdout = _stdout;
+                    Object.defineProperty(global.console, '_stdout', { value: _console_stdout });
+                    Object.defineProperty(global.process, 'stdout', { value: _process_stdout });
                 });
             });
         });
