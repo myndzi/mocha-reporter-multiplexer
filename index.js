@@ -25,8 +25,12 @@ module.exports = function (reporters) {
                     var _console_stdout = console._stdout,
                         _process_stdout = process.stdout;
                     
-                    Object.defineProperty(global.console, '_stdout', { value: stream });
-                    Object.defineProperty(global.process, 'stdout', { value: stream });
+                    var proxyStream = Object.create(stream);
+                    proxyStream.type = '_tty';
+                    proxyStream.isTTY = true;
+                    
+                    Object.defineProperty(global.console, '_stdout', { value: proxyStream });
+                    Object.defineProperty(global.process, 'stdout', { value: proxyStream });
                     
                     var i = arguments.length, args = new Array(i+1);
                     while (i--) { args[i+1] = arguments[i]; }
