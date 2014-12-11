@@ -16,5 +16,8 @@
     "multiplexer"
   ],
   "author": "Kris Reeves",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^2.0.1"
+  }
 }
