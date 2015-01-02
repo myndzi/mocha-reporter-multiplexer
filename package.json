@@ -1,6 +1,6 @@
 {
   "name": "mocha-reporter-multiplexer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Mocha reporter that gives you more useful control over output of other Mocha reporters",
   "main": "index.js",
   "scripts": {
@@ -18,6 +18,6 @@
   "author": "Kris Reeves",
   "license": "ISC",
   "dependencies": {
-    "mocha": "^2.0.1"
+    "mocha": "2.0.x"
   }
 }
