@@ -21,7 +21,9 @@ module.exports = function (reporters) {
                 reporter = new Reporter(ee);
             
             runnerEvents.forEach(function (event) {
-                runner.on(event, function () {
+                var verb = 'on';
+                if (event === 'end') { verb = 'once'; }
+                runner[verb](event, function () {
                     var _console_stdout = console._stdout,
                         _process_stdout = process.stdout;
                     
