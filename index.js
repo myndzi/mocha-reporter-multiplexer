@@ -9,7 +9,7 @@ var _process = process;
 
 var PassThrough = require('stream').PassThrough;
 
-module.exports = function (reporters) {
+module.exports = function (reporters, testGroup) {
     function Multiplexer(runner) {
         Base.call(this, runner);
         
@@ -45,6 +45,8 @@ module.exports = function (reporters) {
                 });
             });
         });
+        
+        runner.emit('test group', testGroup);
     }
     
     return Multiplexer;
