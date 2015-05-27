@@ -18,7 +18,7 @@ module.exports = function (reporters, testGroup) {
                 ee = new EventEmitter;
             
             var stream = reporters[key],
-                reporter = new Reporter(ee);
+                reporter = new Reporter(ee, { name: testGroup });
             
             runnerEvents.forEach(function (event) {
                 var verb = 'on';
