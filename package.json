@@ -19,5 +19,8 @@
   "license": "ISC",
   "dependencies": {
     "mocha": "2.0.x"
+  },
+  "devDependencies": {
+    "bamp": "^1.0.11"
   }
 }
