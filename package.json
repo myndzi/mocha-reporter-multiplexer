@@ -19,7 +19,7 @@
   "author": "Kris Reeves",
   "license": "ISC",
   "dependencies": {
-    "mocha": "2.0.x"
+    "mocha": "^6.1.4"
   },
   "devDependencies": {
     "bamp": "^1.0.11"
