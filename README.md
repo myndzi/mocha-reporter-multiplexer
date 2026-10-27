@@ -1,3 +1,7 @@
+# Archived
+
+Legacy / unused - archived
+
 # What is it?
 
 A shim to make Mocha's reporter api suck less. It allows you to bind multiple reporters and specify streams for them to output to.
